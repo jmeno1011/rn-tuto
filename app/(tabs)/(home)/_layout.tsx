@@ -1,7 +1,11 @@
-import { Stack } from 'expo-router'
-import React from 'react'
+import { Stack } from 'expo-router';
+import React, { useState } from 'react';
 
 export default function HomeLayout() {
+  const [isLog, setIsLog] = useState(false);
+  const changeIsLog = ()=>{
+    setIsLog(!isLog);
+  }
   return (
     <Stack
       screenOptions={{
@@ -19,6 +23,9 @@ export default function HomeLayout() {
         name="modal"
         options={{
           presentation: 'modal',
+          // presentation: 'transparentModal',
+          // animation: 'fade',
+          // headerShown: false,
         }}
       />
     </Stack>
